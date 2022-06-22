@@ -120,8 +120,6 @@ kiali-xxxxxxxxxx-xxxxx                    1/1     Running   0          5h25m
 prometheus-xxxxxxxxx-xxxxx                2/2     Running   0          5h30m
 ```
 
-The primary control plane component is the Istio daemon `istiod`.  `istiod` handles [Traffic Management][1], [Telemetry][2], and [Security][3].  The `istio-ingressgateway` is a load balancer for your service mesh.  You will configure this with a microservices application in the next lab.
-
 Istio 컨트롤 플레인의 기본 구성 요소는 Istio 데몬인 istiod입니다. `istiod`는 [트래픽 관리][1], [원격 측정(Telemetry)][2] 및 [보안][3]을 처리합니다. 
 `istio-ingressgateway`는 서비스 메시용 로드 밸런서입니다. 다음 실습에서는 마이크로서비스 애플리케이션과 함께 이를 구성합니다.
 
