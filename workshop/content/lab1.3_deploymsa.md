@@ -170,7 +170,7 @@ http://istio-ingressgateway-userx-istio.apps.cluster-naa-xxxx.naa-xxxx.example.o
 그러면 아래와 같은 애플리케이션 사용자 인터페이스가 표시되어야 합니다. 새로운 공유 게시판을 만들고 글을 게시해 보세요.
 
 <img src="images/app-pasteboard.png" width="1024"><br/>
- *Create a new board*
+ *새로운 게시판 생성*
 
 ## 요약
 
