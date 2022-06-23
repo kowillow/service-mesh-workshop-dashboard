@@ -1,14 +1,14 @@
-# Adding a New Service to the Mesh
+# 서비스 메시에 새 서비스 추가
 
-You need to deploy the new user profile application into the service mesh.
+방금 생성한 사용자 프로필 애플리케이션을 서비스 메시에 배포해야 합니다.
 
-## Deploy Application
+## 애플리케이션 배포
 
-The deployment file 'userprofile-deploy-all.yaml' was created for you to deploy the application.  The file creates the user profile service and an accompanying PostgreSQL database.  Similar to the other source files, an annotation 'sidecar.istio.io/inject' was added to tell Istio to inject a sidecar proxy and add this to the mesh.
+Deployment 파일 'userprofile-deploy-all.yaml'을 통해 애플리케이션을 배포할 수 있습니다. 이 파일은 사용자 프로필 서비스와 함께 PostgreSQL 데이터베이스를 생성합니다. 다른 소스 파일과 유사하게 'sidecar.istio.io/inject' 주석이 추가되어 있어서, 이를 인지한 Istio가 파드에 사이드카 프록시를 주입하고 메시에 추가합니다.
 
 <blockquote>
 <i class="fa fa-terminal"></i>
-Verify the annotation in the 'userprofile' file:
+'userprofile' 파일에서 주석을 확인합니다.
 </blockquote>
 
 ```execute
@@ -24,15 +24,15 @@ Output:
       sidecar.istio.io/inject: "true"
 ```
 
-The annotation appears twice for the userprofile and PostgreSQL services.
+주석은 userprofile과 PostgreSQL 서비스에 대해 나타나므로 두 번 표시됩니다.
 
 <br>
 
-Before deploying the service, you need a reference to the local image you built in the previous lab.
+서비스를 배포하기 전에 이전 실습에서 구축한 로컬 이미지에 대한 참조가 필요합니다.
 
 <blockquote>
 <i class="fa fa-terminal"></i>
-Run the following commands:
+다음 명령을 실행합니다.
 </blockquote>
 
 ```execute
@@ -47,7 +47,7 @@ image-registry.openshift-image-registry.svc:5000/microservices-demo/userprofile
 
 <blockquote>
 <i class="fa fa-terminal"></i>
-Deploy the service using this image URI:
+다음 이미지 URI를 사용하여 서비스를 배포합니다.
 </blockquote>
 
 ```execute
@@ -56,7 +56,7 @@ sed "s|%USER_PROFILE_IMAGE_URI%|$USER_PROFILE_IMAGE_URI|" ./config/app/userprofi
 
 <blockquote>
 <i class="fa fa-terminal"></i>
-Watch the deployment of the user profile:
+사용자 프로필 앱 배포 상태 확인
 </blockquote>
 
 ```execute
@@ -65,7 +65,7 @@ oc get pods -l deploymentconfig=userprofile --watch
 
 <p>
 <i class="fa fa-info-circle"></i>
-The userprofile service may error and restart if the PostgreSQL pod is not running yet.
+PostgreSQL 파드가 아직 실행되지 않았으면 userprofile 서비스에 오류가 발생하고 다시 시작될 수 있습니다.
 </p>
 
 Output:
@@ -75,11 +75,11 @@ userprofile-xxxxxxxxxx-xxxxx              2/2     Running		    0          2m55s
 
 <br>
 
-Similar to the other microservices, the user profile service runs the application and the Istio proxy.
+다른 마이크로서비스와 마찬가지로, 사용자 프로필 서비스는 애플리케이션과 함께 Istio 프록시를 실행합니다.
 
 <blockquote>
 <i class="fa fa-terminal"></i>
-Print the containers in the 'userprofile' pod:
+'userprofile' 파드에 포함된 컨테이너의 이름을 출력합니다.
 </blockquote>
 
 
@@ -94,16 +94,16 @@ userprofile istio-proxy
 
 <br>
 
-## Access Application
+## 애플리케이션 접속
 
-The user profile service is deployed!  Let's test this in the browser.
+사용자 프로필 서비스가 배포되었습니다! 브라우저에서 이것을 테스트해 봅시다.
 
 <blockquote>
 <i class="fa fa-desktop"></i>
-Navigate to the 'Profile' section in the header.
+웹페이지 헤더의 '프로필' 섹션으로 이동합니다.
 </blockquote>
 
-<p><i class="fa fa-info-circle"></i> If you lost the URL, you can retrieve it via:</p>
+<p><i class="fa fa-info-circle"></i> URL을 분실한 경우 다음을 통해 검색할 수 있습니다.</p>
 
 ```execute
 echo $GATEWAY_URL
@@ -111,7 +111,7 @@ echo $GATEWAY_URL
 
 <br>
 
-You should see the following:
+다음과 같은 화면이 표시되어야 합니다.
 
 <img src="images/app-profilepage.png" width="1024"><br/>
- *Profile Page*
+ *프로필 페이지*
