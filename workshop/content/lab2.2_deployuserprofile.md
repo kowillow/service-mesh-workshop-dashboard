@@ -107,7 +107,7 @@ userprofile istio-proxy
 
 <blockquote>
 <i class="fa fa-desktop"></i>
-웹페이지 헤더의 '프로필' 섹션으로 이동합니다.
+웹페이지 헤더의 'Profile' 섹션으로 이동합니다.
 </blockquote>
 
 <p><i class="fa fa-info-circle"></i> URL을 분실한 경우 다음을 통해 검색할 수 있습니다.</p>
