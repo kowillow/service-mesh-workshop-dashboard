@@ -27,6 +27,7 @@ Output:
 주석은 userprofile과 PostgreSQL 서비스에 대해 나타나므로 두 번 표시됩니다.
 
 <br>
+<br>
 
 서비스를 배포하기 전에 이전 실습에서 구축한 로컬 이미지에 대한 참조가 필요합니다.
 
@@ -46,6 +47,7 @@ image-registry.openshift-image-registry.svc:5000/microservices-demo/userprofile
 ```
 
 <br>
+<br>
 
 <blockquote>
 <i class="fa fa-terminal"></i>
@@ -57,6 +59,7 @@ sed "s|%USER_PROFILE_IMAGE_URI%|$USER_PROFILE_IMAGE_URI|" ./config/app/userprofi
 ```
 
 <br>
+<br>
 
 <blockquote>
 <i class="fa fa-terminal"></i>
@@ -66,8 +69,6 @@ sed "s|%USER_PROFILE_IMAGE_URI%|$USER_PROFILE_IMAGE_URI|" ./config/app/userprofi
 ```execute
 oc get pods -l deploymentconfig=userprofile --watch
 ```
-
-<br>
 
 <p>
 <i class="fa fa-info-circle"></i>
