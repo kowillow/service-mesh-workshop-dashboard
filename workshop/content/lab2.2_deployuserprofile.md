@@ -45,6 +45,8 @@ Output (sample):
 image-registry.openshift-image-registry.svc:5000/microservices-demo/userprofile
 ```
 
+<br>
+
 <blockquote>
 <i class="fa fa-terminal"></i>
 다음 이미지 URI를 사용하여 서비스를 배포합니다.
@@ -54,6 +56,8 @@ image-registry.openshift-image-registry.svc:5000/microservices-demo/userprofile
 sed "s|%USER_PROFILE_IMAGE_URI%|$USER_PROFILE_IMAGE_URI|" ./config/app/userprofile-deploy-all.yaml | oc create -f -
 ```
 
+<br>
+
 <blockquote>
 <i class="fa fa-terminal"></i>
 사용자 프로필 앱 배포 상태 확인
@@ -62,6 +66,8 @@ sed "s|%USER_PROFILE_IMAGE_URI%|$USER_PROFILE_IMAGE_URI|" ./config/app/userprofi
 ```execute
 oc get pods -l deploymentconfig=userprofile --watch
 ```
+
+<br>
 
 <p>
 <i class="fa fa-info-circle"></i>
