@@ -156,4 +156,4 @@ NAME          IMAGE REPOSITORY                                                  
 userprofile   image-registry.openshift-image-registry.svc:5000/microservices-demo/userprofile   1.0   3 minutes ago
 ```
 
-[1]: https://docs.openshift.com/container-platform/4.6/builds/understanding-buildconfigs.html
+[1]: https://docs.openshift.com/container-platform/4.10/builds/understanding-buildconfigs.html
