@@ -1,30 +1,25 @@
-# OpenShift Service Mesh
+# OpenShift 서비스 메시
 
-## Description 
+## 설명
 
-테스트확인!
+현대 애플리케이션이 마이크로 서비스 기반 아키텍처로 이동함에 따라 개발 및 운영 작업을 모두 지원하는 플랫폼의 중요성이 커지고 있습니다. 개발 팀은 서비스를 적절하게 구축, 디버깅 및 연결하는 데 어려움을 겪고 있습니다. 또한 애플리케이션 운영 팀은 하이브리드 구축, 병목 현상 해결, 장애 복구 및 메트릭 수집과 관련하여 점점 더 많은 문제에 직면해 있습니다. Red Hat의 OpenShift 서비스 메시를 사용하면 마이크로 서비스 기반 애플리케이션을 연결, 보호, 제어 및 관찰할 수 있습니다.
 
-As modern applications move toward microservices based architectures the importance of a platform to back both development and operational work grows. Development teams struggle with building, debugging, and connecting services properly. And application operations teams face increasing challenges with hybrid deployments, scaling bottlenecks, recovering from failure, and gathering metrics. Red Hat’s OpenShift Service Mesh lets you connect, secure, control, and observe your microservice based applications.
+## 참석해야 할 사람
 
+이 워크샵은 마이크로 서비스 기반 애플리케이션을 위한 최신 기술에 대해 자세히 알고자 하는 개발자, 아키텍트 및 기술 리더에게 이상적입니다. 컨테이너와 쿠버네티스의 기본 사항에 익숙해야 합니다.
 
-## Who should attend
+## 당신이 배울 것
 
-The workshop is ideal for developers, architects, and technical leads interested in learning more about the latest technologies for microservices based applications. You should be familiar with the fundamentals of containers and Kubernetes.
-
-
-## What you will learn
-
-In this full day, hands-on workshop you'll learn about to operate and manage a service mesh for a microservices application using Red Hat OpenShift Service Mesh. You will get hands-on experience with:
-- Installing a service mesh
-- Building containers for your microservices
-- Leveraging a service mesh to improve operational observability
-- Leveraging a service mesh to address microservice challenges
-- Leveraging a service mesh to implement microservice security
+이번 실습 워크샵에서는 Red Hat OpenShift Service Mesh를 사용하여 마이크로 서비스 애플리케이션을 위한 서비스 메시를 운영하고 관리하는 방법에 대해 배울 것입니다. 다음을 통해 실제 경험을 얻을 수 있습니다.
+- 마이크로 서비스를 위한 컨테이너 빌드
+- 서비스 메시를 활용하여 운영 관찰 가능성 향상
+- 서비스 메시를 활용하여 마이크로 서비스 과제 해결
+- 서비스 메시를 활용하여 마이크로 서비스 보안 구현
 
 
-## Introduction
-Welcome to the workshop!
+## 서론
 
-If you are on-site with us, the instructor will walk you through and kick off each lab.  Otherwise, if you're running this on your own, just go through the list of labs in order (as some build off of each other).
+워크샵에 오신 것을 환영합니다!
+현장에 함께 계신 경우 강사가 각 실습을 안내하고 시작합니다. 
 
-These labs have been tailored for OpenShift 4.x
+이 실습은 OpenShift 4.x에 맞게 조정되었습니다.
