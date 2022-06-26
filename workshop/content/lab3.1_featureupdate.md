@@ -141,10 +141,8 @@ echo $GATEWAY_URL
 ```
 
 <br>
-
 프로필 페이지는 버전 1과 2 사이에서 라운드 로빈(round robin)됩니다. 버전 2는 매우 느리게 로드되며 아래 화면과 같습니다.
 
 <img src="images/app-profilepage-v2.png" width="1024"><br/>
  *Profile Page*
-
 다음으로 Service Mesh를 사용하여 문제를 디버깅합니다.
