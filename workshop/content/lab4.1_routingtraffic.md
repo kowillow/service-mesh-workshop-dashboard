@@ -172,9 +172,7 @@ Kiali 탭의 왼쪽 바에서 'Graph'로 이동합니다.
 'Versioned app graph' 보기로 전환하고 보기 범위를 'Last 1m'으로 변경합니다.  
 </blockquote>
 
-user profile 버전 '2.0'으로 트래픽이 흐르는 것을 볼 수 있습니다.
-
-트래픽 흐름은 그래프에서 녹색으로 강조 표시됩니다.
+트래픽이 점점 user profile 버전 '2.0'으로 흐르는 것을 볼 수 있습니다.
 
 <img src="images/kiali-userprofile-v2.png" width="1024"><br/>
 *Kiali Graph with v2 Routing*
@@ -275,9 +273,7 @@ for ((i=1;i<=100;i++)); do curl -s -o /dev/null $GATEWAY_URL/profile; done
 
 </blockquote>
 
-user profile 버전 '1.0'으로 트래픽이 흐르는 것을 볼 수 있습니다.
-
-트래픽 흐름은 그래프에서 녹색으로 강조 표시됩니다.
+트래픽이 다시 user profile 버전 '1.0'으로 흐르는 것을 볼 수 있습니다.
 
 <img src="images/kiali-userprofile-v1.png" width="1024"><br/>
 *Kiali Graph with v1 Routing*
