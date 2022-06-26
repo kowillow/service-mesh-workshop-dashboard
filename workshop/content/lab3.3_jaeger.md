@@ -1,23 +1,23 @@
-# Distributed Tracing with Jaeger
+# Jaeger(예거)를 사용한 분산 추적
 
-[Jaeger][1] is a distributed tracing tool that lets you trace requests as they flow through your service mesh.  This is incredibly useful for debugging performance issues in your microservices architecture. 
+[Jaeger][1]는 서비스 메시를 통해 흐르는 요청을 추적할 수 있는 분산 추적 도구입니다. 이는 마이크로서비스 아키텍처의 성능 문제를 디버깅하는 데 매우 유용합니다.
 
-## Explore Jaeger
+## Jaeger 살펴보기
 
-First, let's explore the Jaeger user interface.
+먼저 Jaeger 사용자 인터페이스를 살펴보겠습니다.
 
 <blockquote>
 <i class="fa fa-desktop"></i>
-Open the Jaeger console. Retrieve the endpoint for Jaeger: 
+Jaeger 콘솔을 열기 위해 Jaeger에 대한 엔드포인트를 검색합니다.
 </blockquote>
 
 ```execute
 echo $(oc get route jaeger -n %username%-istio --template='https://{{.spec.host}}')
 ```
 
-Click 'Allow selected permissions' if prompted to authorized access.
+접근 권한을 묻는 메시지가 표시되면 'Allow selected permissions'을 클릭합니다.
 
-> Navigate to this URL in the browser. Login with the same credentials you were provided to access OpenShift. 
+> 새 브라우저 탭에서 이 URL로 이동합니다. 제공받은 OpenShift 유저 정보로 로그인합니다.
 
 Once logged in, you should be presented with the Jaeger console:
 
