@@ -145,4 +145,5 @@ echo $GATEWAY_URL
 
 <img src="images/app-profilepage-v2.png" width="1024"><br/>
  *Profile Page*
+
 다음으로 Service Mesh를 사용하여 문제를 디버깅합니다.
