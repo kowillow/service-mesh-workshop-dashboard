@@ -1,14 +1,14 @@
 # 관찰 가능성(Observability) 파고들기
 
-Istio는 서비스 메시와 그 성능을 분석할 수 있는 추가 기능을 제공합니다. 사용자 프로필 서비스의 새 버전을 배포하고 서비스 메시에 미치는 영향을 분석해 보겠습니다.
+Istio는 서비스 메시와 그 성능을 분석할 수 있는 추가 기능을 제공합니다. User profile 서비스의 새 버전을 배포하고 서비스 메시에 미치는 영향을 분석해 보겠습니다.
 
 ## 기능 업데이트
 
-코드는 repo의 'workshop-feature-update' 브랜치에 이미 작성되었습니다.
+새 버전의 코드는 repo의 'workshop-feature-update' 브랜치에 이미 작성되었습니다.
 
 <blockquote>
 <i class="fa fa-terminal"></i>
-이 feature 브랜치로 새로운 빌드를 만듭니다.
+이 feature-update 브랜치로 새로운 빌드를 만듭니다.
 </blockquote>
 
 ```execute
@@ -19,7 +19,7 @@ oc new-app -f ./config/app/userprofile-build.yaml \
   -p APP_VERSION_TAG=2.0
 ```
 
-<p><i class="fa fa-info-circle"></i> 'imagestream이 이미 존재한다'는 실패 메시지는 무시하면 됩니다.</p>
+<p><i class="fa fa-info-circle"></i> 'imagestream이 이미 존재한다'는 실패 메시지는 무시하시면 됩니다.</p>
 
 <br>
 
@@ -32,7 +32,7 @@ oc new-app -f ./config/app/userprofile-build.yaml \
 oc start-build userprofile-2.0 -F
 ```
 
-빌드를 시작하면 빌더는 소스 코드를 컴파일하고 베이스 이미지를 사용해서, 클러스터에 배포 가능한 이미지 아티팩트를 만듭니다. 기다리면 빌드가 성공적으로 완료됩니다.
+빌드를 시작하면, 빌더는 소스 코드를 컴파일하고 베이스 이미지를 사용해서 클러스터에 배포 가능한 이미지 아티팩트를 만듭니다. 기다리면 빌드가 성공적으로 완료됩니다.
 
 Output (snippet):
 ```
