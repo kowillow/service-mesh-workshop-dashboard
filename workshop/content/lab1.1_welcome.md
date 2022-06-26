@@ -1,22 +1,25 @@
-# A Brief Introduction to Microservices
-Microservices, also known as the microservice architecture, is a software development technique that structures an application as a collection of loosely coupled services. Microservice architectures enable the continuous delivery/deployment/scaling of complex applications.
+# 마이크로서비스에 대한 간략한 소개
+
+'마이크로 서비스 아키텍처'라고도 하는 마이크로 서비스는, 애플리케이션을 느슨하게 결합된 서비스의 모음으로 구성하는 소프트웨어 개발 기술입니다. 마이크로 서비스 아키텍처를 통해 복잡한 애플리케이션을 지속적으로 제공/배포/확장할 수 있습니다.
+
+## 왜 마이크로 서비스일까요?
+
+민첩성. 애플리케이션 업데이트를 더 빨리 제공합니다. 버그를 더 쉽게 격리하고 수정합니다. 올바르게 수행되면 마이크로 서비스 아키텍처는 소프트웨어에 대한 몇 가지 중요한 비기능적 요구 사항을 충족하는 데 도움이 됩니다.
+
+* 확장성
+* 공연
+* 신뢰성
+* 회복력
+* 신축성
+* 이용가능성
 
 
-## Why microservices?
-Agility. Deliver application updates faster. Isolate and fix bugs easier. Done right, a microservices architecture will you help to meet several important non-functional requirements for your software:
+## 서비스 메시란?
 
-* scalability
-* performance
-* reliability
-* resiliency
-* extensibility
-* availability
+Red Hat OpenShift Service Mesh는 서비스 메시에 대한 행동 통찰력과 운영 제어 기능을 제공하는 플랫폼으로, 마이크로 서비스 애플리케이션을 연결, 보호 및 모니터링할 수 있는 통일된 방법을 제공합니다.
 
-## What is a Service Mesh?
-Red Hat OpenShift Service Mesh is a platform that provides behavioral insight and operational control over the service mesh, providing a uniform way to connect, secure, and monitor microservice applications.
+서비스 메시라는 용어는 분산형 마이크로 서비스 아키텍처에서 애플리케이션을 구성하는 마이크로 서비스 네트워크와 이러한 마이크로 서비스 간의 상호 작용을 설명합니다. 서비스 메시의 크기와 복잡성이 증가함에 따라, 이해하고 관리하는 것이 더 어려워질 수 있습니다.
 
-The term service mesh describes the network of microservices that make up applications in a distributed microservice architecture and the interactions between those microservices. As a service mesh grows in size and complexity, it can become harder to understand and manage.
+오픈 소스 Istio 프로젝트를 기반으로 하는 Red Hat OpenShift Service Mesh는 서비스 코드의 변경 없이 기존 분산 애플리케이션에 투명 계층을 추가합니다. 마이크로 서비스 간의 모든 네트워크 통신을 가로채는 특수 사이드카 프록시를 환경 전체에 배포하여 서비스에 Red Hat OpenShift 서비스 메시 지원을 추가할 수 있습니다. 컨트롤 플레인 기능을 사용하여 서비스 메시를 구성하고 관리합니다.
 
-Based on the open source Istio project, Red Hat OpenShift Service Mesh adds a transparent layer on existing distributed applications without requiring any changes to the service code. You add Red Hat OpenShift Service Mesh support to services by deploying a special sidecar proxy throughout your environment that intercepts all network communication between microservices. You configure and manage the service mesh using the control plane features.
-
-Red Hat OpenShift Service Mesh provides an easy way to create a network of deployed services that provides discovery, load balancing, service-to-service authentication, failure recovery, metrics, and monitoring. A service mesh also provides more complex operational functionality, including A/B testing, canary releases, rate limiting, access control, and end-to-end authentication.
+Red Hat OpenShift Service Mesh는 검색, 로드 밸런싱, 서비스 간 인증, 장애 복구, 메트릭 및 모니터링을 제공하는, 배포된 서비스 네트워크를 쉽게 생성할 수 있는 방법을 제공합니다. 서비스 메시는 또한 A/B 테스트, 카나리아 릴리스, 속도 제한, 액세스 제어 및 엔드 투 엔드 인증을 포함한 보다 복잡한 운영 기능을 제공합니다.
