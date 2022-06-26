@@ -110,7 +110,7 @@ sed "s|%USER_PROFILE_IMAGE_URI%|$USER_PROFILE_IMAGE_URI|" ./config/app/userprofi
 
 <blockquote>
 <i class="fa fa-terminal"></i>
-사용자 프로필 서비스의 배포 상태 보기
+User profile 서비스의 배포 상태 보기
 </blockquote>
 
 ```execute
