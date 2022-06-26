@@ -23,7 +23,7 @@ echo $(oc get route grafana -n %username%-istio --template='https://{{.spec.host
 
 로그인하면 Grafana 콘솔이 표시됩니다.
 
-<img src="images/grafana-welcome.png" width="600">
+<img src="images/grafana-welcome.png" width="600"><br/>
 *Grafana Welcome*
 
 <br>
