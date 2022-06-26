@@ -120,8 +120,6 @@ https://kiali-userx-istio.apps.cluster-naa-xxxx.naa-xxxx.example.opentlc.com
 </blockquote>
 
 <img src="images/kiali-appuitraffic.png" width="1024"><br/>
-*App UI의 인바운드 및 아웃바운드 트래픽 *
-
-<br>
+*App UI의 인바운드 및 아웃바운드 트래픽*
 
 [1]: https://kiali.io
