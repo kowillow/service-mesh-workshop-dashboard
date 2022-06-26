@@ -167,7 +167,8 @@ http://istio-ingressgateway-userx-istio.apps.cluster-naa-xxxx.naa-xxxx.example.o
 
 <br>
 
-그러면 아래와 같은 애플리케이션 사용자 인터페이스가 표시되어야 합니다. 새로운 공유 게시판을 만들고 글을 게시해 보세요.
+그러면 아래와 같은 애플리케이션 사용자 인터페이스가 표시되어야 합니다. 화면과 같이 새로운 게시판을 만들고 글을 게시할 수도 있습니다. 
+그리고 이후 랩의 실습을 위해 화면 상단, 헤더의 'Shared'를 클릭하여 임의의 텍스트를 추가해보세요.
 
 <img src="images/app-pasteboard.png" width="1024"><br/>
  *새로운 게시판 생성*
