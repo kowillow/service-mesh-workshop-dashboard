@@ -8,7 +8,6 @@ Kiali의 변경 사항을 확인합니다. 왼쪽 메뉴바에서 'Graph'로 이
 윗줄 두번째 드롭다운(아마 'Versioned app graph'가 선택되어 있을)에서 'Service graph'를 선택하고 'Display' 드롭다운 맨 아래쪽의 'Security' 란이 선택되어 있는지 확인합니다.
 </blockquote>
 
-You should see something like this screenshot with little locks indicating that mTLS is working for service-to-service communication.
 서비스 간 통신을 위해 mTLS가 작동 중임을 나타내는 작은 자물쇠 아이콘이 있는, 아래 스크린샷과 같은 화면을 볼 수 있습니다.
 
 <img src="images/kiali-mtls.png" width="1024" class="screenshot"><br/>
@@ -68,11 +67,6 @@ oc delete dr --all
 먼저 사이드카와 경계 프록시는 PEP(Policy Enforcement Points, 정책 적용 지점)역할을 하며 메시 외부와 메시의 서비스 간(모든 클라이언트/서버 연결)의 통신을 보호합니다. 그리고 Service Mesh 컨트롤 플레인은 설정, 인증서 및 키를 관리합니다. 단순화된 아키텍처는 다음과 같습니다.
 
 <img src="images/architecture-security.svg" width="1024"><br/>
-
-* Outbound traffic is rerouted from a Service A to the local sidecar Envoy running in the same Pod.
-* The client-side Envoy starts a mutual TLS handshake with Service B's server-side Envoy. During the handshake, the client-side Envoy also does a secure naming check to verify that the service account presented in the server certificate is authorized to run the target service.
-* The client-side Envoy and the server-side Envoy establish a mutual TLS connection, and traffic is forwarded from the client-side Envoy to the server-side Envoy.
-* After authorization, the server-side Envoy forwards the traffic to Service B through local TCP connections.
 
 Service Mesh의 데이터 플레인은 각 Enjoy 사이드카 컨테이너에 구현되는 PEP를 통해 서비스 대 서비스 통신을 터널링합니다. 워크로드가 상호 TLS 인증을 사용하여 요청을 다른 워크로드로 보낼 때 요청은 다음과 같이 처리됩니다.
 
