@@ -94,8 +94,7 @@ ECONNRESET 오류와 함께 아래와 유사한 출력을 얻어야 합니다.
 }
 ```
 
-Which is curl trying to talk to the context-scraper microservice (in the mesh). You can see from the error details that the service is trying to get out to googleapis.com but fails.
-메시에 있는 컨텍스트 스크래퍼(context-scraper) 마이크로 서비스와 통신하려고 하는 curl 입니다. 오류 세부 정보를 통해, 서비스가 googleapis.com으로 나가려고 하지만 실패한다는 것을 알 수 있습니다.
+이것은 메시에 있는 컨텍스트 스크래퍼(context-scraper) 마이크로 서비스와 통신하려고 하는 curl 입니다. 오류 세부 정보를 통해, 서비스가 googleapis.com으로 나가려고 하지만 실패한다는 것을 알 수 있습니다.
 
 <br>
 
@@ -109,9 +108,6 @@ Which is curl trying to talk to the context-scraper microservice (in the mesh). 
 <br>
 
 ## 승인된 호스트로의 송신 허용
-Now we will be using an Istio API object of type [ServiceEntry][5] to allow controlled egress. After you add this ServiceEntry, our microservices (via their Envoy sidecars) can send traffic to the specified external service as if it was a service in your mesh.
-
-Our ServiceEntry looks like this:
 이제 [ServiceEntry][5] 유형의 Istio API 개체를 사용하여 제어된 송신을 허용합니다. 이 ServiceEntry를 추가하면 우리의 마이크로 서비스가(Envoy 사이드카를 통해) 메시의 서비스인 것처럼 지정된 외부 서비스로 트래픽을 보낼 수 있습니다.
 
 ServiceEntry는 다음과 같습니다.
@@ -213,15 +209,6 @@ tors it created. We get a hint of this in TSCC of a second machine\n ..."
 <br>
 
 # Summary
-Congrats! You successfully locked down egress to known external hosts and configured tracking of that via the Service Mesh. This is an advanced capability of the mesh - and you can read more about managing [ingress here][1] and [egress here][2]. 
-
-A few key highlights are:
-
-* We can lock down egress traffic to only approved external endpoints or services
-* We can lock down ingress traffic to only approved external endpoints or services
-* We can secure ingress traffic via standard TLS or mutual TLS
-* We can leverage 3scale API management to limit who can access exposed APIs and how
-
 축하합니다! 알려진 외부 호스트에서만 송신이 가능하도록 설정하고, 서비스 메시를 통해 이에 대한 추적을 구성했습니다. 이것은 메시의 고급 기능입니다. [ingress는 이쪽에서][1], 그리고 [egress는 이쪽에서][2] 관리하는 방법에 대한 자세한 내용을 읽을 수 있습니다.
 
 몇 가지 주요 사항은 다음과 같습니다.
