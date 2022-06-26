@@ -111,7 +111,8 @@ https://kiali-userx-istio.apps.cluster-naa-xxxx.naa-xxxx.example.opentlc.com
 
 <img src="images/kiali-appui.png" width="1024"><br/>
 *App UI에 대한 Kiali View*
-해당 마이크로 서비스의 'health'가 표시되어야 합니다.
+
+해당 마이크로 서비스의 'health'가 초록색 마크로 표시되어야 합니다.
 
 <blockquote>
 <i class="fa fa-terminal"></i>
