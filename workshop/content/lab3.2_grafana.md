@@ -27,6 +27,7 @@ echo $(oc get route grafana -n %username%-istio --template='https://{{.spec.host
 *Grafana Welcome*
 
 <br>
+
 <blockquote>
 <i class="fa fa-desktop"></i>
 왼쪽 바의 상단에서 세 번째 아이콘(대시보드) 위로 마우스를 가져간 다음 'Manage'를 선택합니다. 'istio' 폴더를 확장합니다.
@@ -38,6 +39,7 @@ echo $(oc get route grafana -n %username%-istio --template='https://{{.spec.host
 *Grafana Istio 대시보드*
 
 <br>
+
 메트릭을 보기 전에 애플리케이션에 부하를 주어야 합니다.
 
 <blockquote>
@@ -112,7 +114,9 @@ userprofile 서비스에는 userprofile(버전 1)과 userprofile-2라는 두 가
 *Grafana Istio Service Dashboard - Request Duration*
 
 <br>
+
 이것은 메시 대시보드에서 봤던 대기 시간을 시각적으로 보여주며, 버전 2의 대기 시간이 훨씬 더 높다는 것을 확인할 수 있습니다.
+
 <br>
 
 
