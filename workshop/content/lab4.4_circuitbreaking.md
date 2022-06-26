@@ -52,7 +52,7 @@ oc apply -f ./config/istio/destinationrule-circuitbreaking.yaml
 
 <br>
 
-## 회로 차단기 트립
+## 회로 차단기 
 
 <blockquote>
 <i class="fa fa-terminal"></i>
