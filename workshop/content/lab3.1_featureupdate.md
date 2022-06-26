@@ -130,7 +130,7 @@ userprofile-xxxxxxxxxx-xxxxx              2/2     Running        0          2m55
 브라우저에서 새 버전의 프로필 서비스를 테스트해 보겠습니다(스포일러: 일부러 버그를 추가했습니다).
 
 <blockquote>
-<i class="fa fa-desktop"></i>.  
+<i class="fa fa-desktop"></i>  
 헤더의 'Profile' 섹션으로 이동합니다.
 </blockquote>
 
