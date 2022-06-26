@@ -73,7 +73,7 @@ https://kiali-userx-istio.apps.cluster-naa-xxxx.naa-xxxx.example.opentlc.com
 
 <blockquote>
 <i class="fa fa-desktop"></i>
-그리고 오른쪽 화면에서 새로고침 당 보여줄 트래픽 메트릭을 'Last 1m'에서 'Last 10m'으로 변경합니다.
+그리고 오른쪽 화면에서 보여줄 트래픽 메트릭의 범위를 'Last 1m'에서 'Last 10m'으로 변경합니다.
 </blockquote>
 
 <img src="images/kiali-graph.png" width="1024"><br/>
