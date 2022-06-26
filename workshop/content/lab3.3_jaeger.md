@@ -144,7 +144,7 @@ for ((i=1;i<=5;i++)); do curl -s -o /dev/null $GATEWAY_URL/profile; done
 <blockquote>
 <i class="fa fa-desktop"></i>
 Select one of the fast traces to start, and expand the lowest span.  
-빠른 트레이스 중 하나를 선택하고, 가장 낮은 스팬을 확장합니다.
+빠른 트레이스(ms 단위) 중 하나를 선택하고, 가장 낮은 스팬을 확장합니다.
 </blockquote>
 
 화면은 다음과 같아야 합니다.
@@ -171,7 +171,7 @@ oc get pods -l deploymentconfig=userprofile,version=1.0 -o jsonpath='{.items[*].
 
 <blockquote>
 <i class="fa fa-desktop"></i>
-이제 느린 트레이스 중 하나를 선택하고 가장 낮은 스팬을 확장합니다.
+이제 느린 트레이스(약 10s) 중 하나를 선택하고 가장 낮은 스팬을 확장합니다.
 </blockquote>
 
 화면은 다음과 같아야 합니다.
@@ -179,7 +179,6 @@ oc get pods -l deploymentconfig=userprofile,version=1.0 -o jsonpath='{.items[*].
 <img src="images/jaeger-userprofile-slow.png" width="1024"><br/>
 *User Profile Slow Service*
 
-In this view, you can easily see that the total time of the request was spent by the userprofile service itself.  In the example above, it started execution at 5:23ms and took 10 seconds to complete.  You can further verify the pod that served this request was the version 2 user profile service.
 이 보기에서 userprofile 서비스 자체에서 요청의 총 시간을 소비했음을 쉽게 확인할 수 있습니다. 위의 예에서는 5:23ms에 실행을 시작했고 완료하는 데 10초가 걸렸습니다. 이 요청을 처리한 파드가 버전 2 사용자 프로필 서비스인지 추가로 확인할 수 있습니다.
 
 <br>
