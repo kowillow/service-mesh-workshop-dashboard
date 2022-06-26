@@ -101,7 +101,6 @@ https://kiali-userx-istio.apps.cluster-naa-xxxx.naa-xxxx.example.opentlc.com
 
 <blockquote>
 <i class="fa fa-terminal"></i>
-Navigate to  'Applications' in the left navigation bar.
 왼쪽 메뉴에서 'Applications'로 이동합니다.
 </blockquote>
 
@@ -112,7 +111,6 @@ Navigate to  'Applications' in the left navigation bar.
 
 <blockquote>
 <i class="fa fa-terminal"></i>
-You can drill down into each microservice from this view.  Select 'app-ui'.
 이 보기에서 각 마이크로서비스들의 다양한 정보를 확인할 수 있습니다. 'app-ui'를 선택합니다.
 </blockquote>
 
