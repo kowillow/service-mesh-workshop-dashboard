@@ -145,7 +145,7 @@ oc apply -f ./config/istio/virtual-service-userprofile-delay.yaml
 
 <blockquote>
 <i class="fa fa-terminal"></i>
-아직 수행하지 않은 경우 - 사용자 프로필 서비스에 부하 주기
+아직 수행하지 않은 경우 - user profile 서비스에 부하 주기
 </blockquote>
 
 ```execute
@@ -166,7 +166,7 @@ Jaeger 탭을 열고, **Service**를 `userprofile.%username%`으로 설정하고
 지연 오류를 주입하는 것은 애플리케이션이 느린 아웃바운드 서비스 호출을 처리하는 방법을 테스트하는 훌륭한 메커니즘입니다.
 
 
-<img src="images/kiali-userprofile-faultdelaytraces.png" width="1024"><br/>
+<img src="images/jaeger-userprofile-faultdelaytraces.png" width="1024"><br/>
 *오류 지연이 있는 User Profile Service에 대한 트레이스*
 
 ## Clean up
