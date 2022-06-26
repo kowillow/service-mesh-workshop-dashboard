@@ -64,7 +64,7 @@ for ((i=1;i<=100;i++)); do curl -s -o /dev/null $GATEWAY_URL; done
 이 트레이스들 중에서 하나를 선택합니다.  
 </blockquote>
 
-정보에는 'Duration' 및 'Total Spans'가 포함됩니다. '지속 시간(Duration)'은 이 트레이스에 대한 응답을 보내고 받는 데 걸린 총 시간을 나타냅니다. '총 스팬(Total Spans)'는 스팬의 수를 나타냅니다. 각 '스팬'은 이 트레이스에 대해 실행된 작업 단위를 나타냅니다. 아래 예에서 'app-ui'는 9.52ms가 소요되었으며, 이 중 5.14ms는 보드 서비스를 호출하는 데 소요되었습니다. 보드 서비스 자체는 응답을 반환하기 전에 실행하는 데 3.56ms가 걸렸습니다.
+정보에는 'Duration' 및 'Total Spans'가 포함됩니다. '지속 시간(Duration)'은 이 트레이스에 대한 응답을 보내고 받는 데 걸린 총 시간을 나타냅니다. '총 스팬(Total Spans)'는 스팬의 수를 나타냅니다. 각 '스팬'은 이 트레이스에 대해 실행된 작업 단위를 나타냅니다. 아래 예에서 'app-ui'는 45.14ms가 소요되었으며, 이 중 1.98ms는 보드 서비스를 호출하는 데 소요되었습니다. 보드 서비스 자체는 응답을 반환하기 전에 실행하는 데 1.56ms가 걸렸습니다.
 
 <img src="images/jaeger-boards-example.png" width="1024"><br/>
 *Boards Service Example*
@@ -151,7 +151,7 @@ for ((i=1;i<=5;i++)); do curl -s -o /dev/null $GATEWAY_URL/profile; done
 <img src="images/jaeger-userprofile-fast.png" width="1024"><br/>
 *User Profile Fast Service*
 
-위의 예에서 트레이스를 완료하는 데 총 13.48ms가 소요되었습니다. user profile 서비스 자체는 실행하고 응답을 반환하는 데 3.5ms가 걸렸습니다. 이 요청을 처리한 파드가 버전 1 사용자 프로필 서비스인지 것을 확인할 수 있습니다.
+위의 예에서 트레이스를 완료하는 데 총 7.42ms가 소요되었습니다. user profile 서비스 자체는 실행하고 응답을 반환하는 데 2.09ms가 걸렸습니다. 이 요청을 처리한 파드가 버전 1 사용자 프로필 서비스인지 것을 확인할 수 있습니다.
 
 <br>
 
@@ -178,7 +178,7 @@ oc get pods -l deploymentconfig=userprofile,version=1.0 -o jsonpath='{.items[*].
 <img src="images/jaeger-userprofile-slow.png" width="1024"><br/>
 *User Profile Slow Service*
 
-이 보기에서 userprofile 서비스 자체에서 요청의 총 시간을 소비했음을 쉽게 확인할 수 있습니다. 위의 예에서는 5:23ms에 실행을 시작했고 완료하는 데 10초가 걸렸습니다. 이 요청을 처리한 파드가 버전 2 사용자 프로필 서비스인지 추가로 확인할 수 있습니다.
+이 보기에서 userprofile 서비스 자체에서 요청의 총 시간 대부분을 소비했음을 쉽게 확인할 수 있습니다. 위의 예에서는 3.56ms에 실행을 시작했고 완료하는 데 10초가 걸렸습니다. 이 요청을 처리한 파드가 버전 2 사용자 프로필 서비스인지 추가로 확인할 수 있습니다.
 
 <br>
 
