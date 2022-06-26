@@ -27,7 +27,6 @@ echo $(oc get route grafana -n %username%-istio --template='https://{{.spec.host
 *Grafana Welcome*
 
 <br>
-
 <blockquote>
 <i class="fa fa-desktop"></i>
 왼쪽 바의 상단에서 두 번째 아이콘(대시보드) 위로 마우스를 가져간 다음 'Manage'를 선택합니다. 'istio' 폴더를 확장합니다.
@@ -39,7 +38,6 @@ echo $(oc get route grafana -n %username%-istio --template='https://{{.spec.host
 *Grafana Istio 대시보드*
 
 <br>
-
 메트릭을 보기 전에 애플리케이션에 부하를 주어야 합니다.
 
 <blockquote>
