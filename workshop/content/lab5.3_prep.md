@@ -1,12 +1,14 @@
-# Single Sign-On
-Login, registration, and role-based authorization is handled via Red Hat SSO (aka Keycloak).
-SSO is included as part of OpenShift or any middleware product subscription you have from Red Hat - woot!
+# 싱글 사인온(Single Sign-On)
+로그인, 등록 및 역할 기반 인증은 Red Hat SSO(일명 Keycloak)를 통해 처리됩니다.
+SSO는 OpenShift 또는 Red Hat의 미들웨어 제품 서브스크립션의 일부로 포함되어 있습니다.
 
-## Installation
+## 설치
 Because the service mesh will leverage SSO to authenticate users and generate JWT we need to install it. You will install it via Operator into your namespace.
+서비스 메시는 SSO를 활용하여 사용자를 인증하고 JWT를 생성하므로 이를 설치해야 합니다. 현재 제공된 환경에는 Service Mesh와 마찬가지로, Operator를 통해 네임스페이스에 미리 설치되어 있습니다. (%username% 네임스페이스)
 
-### Customize the Resources
+### 리소스 커스터마이징
 Check out the .yaml files here and customize for this workshop cluster's domain, and your user project. Note that we have relaxed SSO security settings for the workshop and SSO config should be tightened up for production (e.g. things like CORS and the use of wildcards).
+yaml 파일을 확인하고 이 워크샵 클러스터의 도메인과 사용자 프로젝트에 맞게 사용자 정의하십시오. 워크샵에 대한 SSO 보안 설정을 완화했으며 프로덕션을 위해 SSO 구성을 강화해야 합니다(예: CORS 및 와일드카드 사용).
 
 ### Create an Instance of SSO / Configuration
 You can do this CLI or web console. If using web console just use the + button at the top then drag'n'drop the file from the steps below.
