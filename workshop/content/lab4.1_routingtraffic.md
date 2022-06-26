@@ -2,7 +2,6 @@
 
 Istio의 핵심 기능 중 하나는 애플리케이션 코드 자체를 수정하지 않고 서비스가 통신하는 방식을 동적으로 제어하는 기능입니다. Istio에서 이 개념을 [트래픽 관리][1]라고 합니다. A/B 테스트, 카나리아 롤아웃, 롤백 등과 같은 작업을 수행할 수 있습니다.
 
-The two core API objects for traffic management are the [Virtual Service][2] and the [Destination Rule][3].  The destination rule is for the owner of a microservice - what versions do I expose and what happens to traffic before it reaches my service?  The virtual service is for the client of a microservice - how do I want to route traffic to the microservice?
 트래픽 관리를 위한 두 가지 핵심 API 개체는 [Virtual Service(가상 서비스)][2]와 [Destination Rule(대상 규칙)][3]입니다. 
 Destination Rule은 마이크로 서비스의 소유자를 위한 것입니다. 어떤 버전을 노출하고 트래픽이 내 서비스에 도달하기 전에 어떻게 할지 설정합니다. 
 Virtual Service는 마이크로 서비스의 클라이언트를 위한 것입니다. 마이크로 서비스로 트래픽을 어떻게 라우팅할지 설정합니다.
