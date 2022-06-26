@@ -82,12 +82,10 @@ https://kiali-userx-istio.apps.cluster-naa-xxxx.naa-xxxx.example.opentlc.com
 이 그래프는 서비스 메시의 마이크로서비스와 이들이 연결되는 방식을 보여줍니다.
 엣지 레이블을 통해 서비스 간에 전송되는 트래픽에 대한 정보를 확인할 수 있습니다.
 
-<br>
 
 <blockquote>
 <i class="fa fa-desktop"></i>
 엣지 레이블에 트래픽 정보를 표시하기 위해, 화면처럼 'Display'를 클릭하고 'Show Edge Labels'에서 'Request Rate'를 선택합니다.
-
 </blockquote>
 
 그럼 이제 마이크로서비스 간의 HTTP 트래픽 정보를 볼 수 있습니다.
@@ -98,7 +96,6 @@ https://kiali-userx-istio.apps.cluster-naa-xxxx.naa-xxxx.example.opentlc.com
 이어서 서비스 메시에서 실행되는 마이크로서비스를 살펴보겠습니다.
 
 <br>
-
 <blockquote>
 <i class="fa fa-terminal"></i>
 왼쪽 메뉴에서 'Applications'로 이동합니다.
@@ -107,25 +104,18 @@ https://kiali-userx-istio.apps.cluster-naa-xxxx.naa-xxxx.example.opentlc.com
 <img src="images/kiali-apps.png" width="1024"><br/>
 *Applications에 대한 Kiali View*
 
-<br>
-
 <blockquote>
 <i class="fa fa-terminal"></i>
 이 보기에서 각 마이크로서비스들의 다양한 정보를 확인할 수 있습니다. 'app-ui'를 선택합니다.
 </blockquote>
 
-
 <img src="images/kiali-appui.png" width="1024"><br/>
 *App UI에 대한 Kiali View*
-
 해당 마이크로 서비스의 'health'가 표시되어야 합니다.
-
-<br>
 
 <blockquote>
 <i class="fa fa-terminal"></i>
 '트래픽' 탭으로 이동하면 해당 마이크로서비스에서 만들어진 인바운드 및 아웃바운드 호출이 표시됩니다.
-
 </blockquote>
 
 <img src="images/kiali-appuitraffic.png" width="1024"><br/>
