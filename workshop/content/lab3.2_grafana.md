@@ -1,27 +1,27 @@
-# Service Mesh Metrics with Grafana
+# Grafana를 사용한 서비스 메시 메트릭 확인
 
-[Grafana][1] is a monitoring tool that can be integrated with Istio for metric observation.  Using Grafana, you can look at metrics associated with services in your mesh.  Let's use Grafana to get more information about the user profile service.
+[Grafana][1]는 메트릭 관찰을 위해 Istio와 통합할 수 있는 모니터링 도구입니다. Grafana를 사용하여 메시의 서비스와 관련된 메트릭을 볼 수 있습니다. 사용자 프로필 서비스에 대한 자세한 정보를 얻기 위해 Grafana를 사용합니다.
 
-## Explore Grafana
+## Grafana 살펴보기
 
-First, let's explore the Grafana user interface.
+먼저 Grafana 사용자 인터페이스를 살펴보겠습니다.
 
 <blockquote>
 <i class="fa fa-terminal"></i>
-Open the Grafana console.  Retrieve the endpoint for Grafana:
+Grafana 콘솔을 열기 위해 Grafana의 엔드포인트를 검색합니다.
 </blockquote>
 
 ```execute
 echo $(oc get route grafana -n %username%-istio --template='https://{{.spec.host}}')
 ```
-<p><i class="fa fa-info-circle"></i> Click 'Allow selected permissions' if prompted to authorized access.</p>
+<p><i class="fa fa-info-circle"></i> 접근 권한을 묻는 메시지가 표시되면 'Allow selected permissions'을 클릭합니다.</p>
 
 <blockquote>
 <i class="fa fa-desktop"></i>
-Navigate to this URL in a new browser tab.  Login with the same credentials you were provided to access OpenShift. 
+새 브라우저 탭에서 이 URL로 이동합니다. 제공받은 OpenShift 유저 정보로 로그인합니다.
 </blockquote>
 
-Once logged in, you should be presented with the Grafana console:
+로그인하면 Grafana 콘솔이 표시됩니다.
 
 <img src="images/grafana-welcome.png" width="600"><br/>
 *Grafana Welcome*
@@ -30,21 +30,21 @@ Once logged in, you should be presented with the Grafana console:
 
 <blockquote>
 <i class="fa fa-desktop"></i>
-On the left bar, hover over the second icon from the top (Dashboards) and select 'Manage'.  Expand the 'istio' folder.
+왼쪽 바의 상단에서 두 번째 아이콘(대시보드) 위로 마우스를 가져간 다음 'Manage'를 선택합니다. 'istio' 폴더를 확장합니다.
 </blockquote>
 
-It should look like this:
+다음과 같이 표시되어야 합니다.
 
 <img src="images/grafana-istio.png" width="1024"><br/>
-*Grafana Istio Dashboards*
+*Grafana Istio 대시보드*
 
 <br>
 
-You need to send load to the application before viewing any metrics.
+메트릭을 보기 전에 애플리케이션에 부하를 주어야 합니다.
 
 <blockquote>
 <i class="fa fa-terminal"></i>
-Send load to the application user interface:
+애플리케이션 사용자 인터페이스에 부하를 줍니다.
 </blockquote>
 
 ```execute
@@ -53,25 +53,25 @@ while true; do curl -s -o /dev/null $GATEWAY_URL; done
 
 <br>
 
-While that is running, let's look at some dashboards.
+위 명령어가 실행되는 동안 몇 가지 대시보드를 살펴보겠습니다.
 
 <blockquote>
 <i class="fa fa-desktop"></i>
-Select 'Istio Mesh Dashboard' in Grafana.
+Grafana에서 'Istio Mesh Dashboard'를 선택합니다.
 </blockquote>
 
-It should look like this:
+다음과 같이 표시되어야 합니다.
 
 <img src="images/grafana-istio-mesh.png" width="1024"><br/>
-*Grafana Istio Mesh Dashboard*
+*Grafana Istio 메시 대시보드*
 
 <br>
 
-This gives you a holistic view of your services and metrics associated with those services.  For example, you can see that globally there are no error responses, and you get a quick snapshot of the throughput and latencies for each service.  But we're missing data on the user profile service so let's send some load to that service.
+이 화면을 통해 서비스 및 해당 서비스와 관련된 메트릭을 전체적으로 볼 수 있습니다. 예를 들어, 전역적으로 오류 응답이 없음을 알 수 있으며 각 서비스의 처리량 및 대기 시간에 대한 빠른 스냅샷을 얻을 수 있습니다. 그러나 사용자 프로필 서비스에 대한 데이터가 누락되었으므로 해당 서비스에 약간의 부하를 주도록 하겠습니다.
 
 <blockquote>
 <i class="fa fa-terminal"></i>
-Open another tab in the terminal. Send load to the user profile service:
+터미널에서 다른 탭을 열고 사용자 프로필 서비스에 부하를 보냅니다.
 </blockquote>
 
 ```execute-2
@@ -79,42 +79,42 @@ GATEWAY_URL=$(oc get route istio-ingressgateway -n %username%-istio --template='
 while true; do curl -s -o /dev/null $GATEWAY_URL/profile; done
 ```
 
-The mesh dashboard should dynamically update.  It should look like this now:
+메시 대시보드는 동적으로 업데이트 되기 때문에, 이제 다음과 같이 표시되어야 합니다.
 
 <img src="images/grafana-istio-mesh-updated.png" width="1024"><br/>
-*Grafana Istio Mesh Dashboard Updated*
+*Grafana Istio 메시 대시보드 업데이트됨*
 
 <br>
 
-Notice the userprofile service has two different workloads: userprofile (version 1) and userprofile-2.  Calls to userprofile-2 are vastly slower.  You can further inspect the metrics associated with the service by selecting the service dashboard.
+userprofile 서비스에는 userprofile(버전 1)과 userprofile-2라는 두 가지 워크로드가 있습니다. userprofile-2에 대한 호출은 훨씬 느립니다. service 대시보드를 선택하여 서비스와 연결된 메트릭을 추가로 확인할 수 있습니다.
 
 <blockquote>
 <i class="fa fa-desktop"></i>
-In the Service column, hover over the userprofile FQDN and select it.
+서비스 열(column)에서 userprofile 서비스 FQDN 위로 마우스를 가져간 다음 선택합니다.
 </blockquote>
 
-That will take you to the service view, it looks like this:
+그러면 서비스 보기로 이동합니다. 아래와 같은 화면을 확인할 수 있습니다.
 
 <img src="images/grafana-istio-service.png" width="1024"><br/>
-*Grafana Istio Service Dashboard*
+*Grafana Istio 서비스 대시보드*
 
 <br>
 
-These are metrics specific to the user profile service.  Scroll down under 'Service Workloads' and you can see a breakdown of how the different workload versions differ for that service.
+이는 사용자 프로필 서비스와 관련된 메트릭입니다. '서비스 워크로드' 아래로 스크롤하면 해당 서비스에 대해 다양한 워크로드 버전이 어떻게 다른지 분석할 수 있습니다.
 
 <blockquote>
 <i class="fa fa-desktop"></i>
-Hover over the Incoming Request Duration by Source under 'Service Workloads'.
+'Service Workloads'에서 Incoming Request Duration by Sourc(소스별 수신 요청 기간) 위로 마우스를 가져갑니다.
 </blockquote>
 
-It should look like this:
+그럼 다음과 같이 표시되어야 합니다.
 
 <img src="images/grafana-istio-service-duration.png" width="1024"><br/>
 *Grafana Istio Service Dashboard - Request Duration*
 
 <br>
 
-This provides a visual representation of the latencies we saw on the Mesh Dashboard, and it is clear that the version 2 latencies are much higher.
+이것은 메시 대시보드에서 봤던 대기 시간을 시각적으로 보여주며, 버전 2의 대기 시간이 훨씬 더 높다는 것을 확인할 수 있습니다.
 
 <br>
 
