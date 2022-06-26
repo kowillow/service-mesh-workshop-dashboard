@@ -29,7 +29,7 @@ echo $(oc get route grafana -n %username%-istio --template='https://{{.spec.host
 <br>
 <blockquote>
 <i class="fa fa-desktop"></i>
-왼쪽 바의 상단에서  번째 아이콘(대시보드) 위로 마우스를 가져간 다음 'Manage'를 선택합니다. 'istio' 폴더를 확장합니다.
+왼쪽 바의 상단에서 세 번째 아이콘(대시보드) 위로 마우스를 가져간 다음 'Manage'를 선택합니다. 'istio' 폴더를 확장합니다.
 </blockquote>
 
 다음과 같이 표시되어야 합니다.
