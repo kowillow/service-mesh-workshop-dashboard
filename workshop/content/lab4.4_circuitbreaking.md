@@ -2,15 +2,15 @@
 
 오류 주입(Fault Injection)을 사용하면 특정 서비스에 대한 네트워크 호출에 장애가 있을 때 서비스 메시가 어떻게 작동하는지 확인할 수 있습니다. 그러나 트래픽을 제공하는 인스턴스에 과부하가 걸리거나 실패한 경우에는 서비스를 어떻게 보호합니까? 이상적으로는 장애가 있는 인스턴스를 식별하고 특정 임계값을 충족하면 클라이언트가 해당 인스턴스에 연결하지 못하도록 하는 것이 좋습니다.
 
-OpenShift에서 '인스턴스'는 마이크로서비스를 실행하는 Kubernetes 파드와 동일합니다.
+OpenShift에서 '인스턴스'는 마이크로서비스를 실행하는 Kubernetes 파드라고 생각할 수 있습니다. 
 
-이 개념을 회로 차단(Circuit Breaking)이라고 합니다. 마이크로 서비스를 실행하는 인스턴스에 대한 임계값 제한(Threshold Limits)을 설정하고 임계값 제한에 도달하면 회로 차단기가 해당 연결을 "트립" Istio가 해당 인스턴스에 대한 추가 연결을 방지합니다. 회로 차단은 서비스 메시에서 탄력적인 서비스를 구축하는 또 다른 방법입니다.
+이 개념을 회로 차단(Circuit Breaking)이라고 합니다. 마이크로 서비스를 실행하는 인스턴스에 대한 임계값 제한(Threshold Limits)을 설정하고, 임계값 제한에 도달하면 회로 차단기가 작동하여 Istio가 해당 인스턴스에 대한 추가 연결을 방지합니다. 회로 차단은 서비스 메시에서 탄력적인 서비스를 구축하는 또 다른 방법입니다.
 
 Istio에서는 Destination Rule을 사용하여 회로 차단 제한을 정의할 수 있습니다.
 
 ## 임계값 제한 정의
 
-user profile 서비스에 대한 회로 차단 규칙이 이미 작성되었습니다.
+user profile 서비스에 대한 회로 차단 규칙은 이미 작성되었습니다.
 
 <blockquote>
 <i class="fa fa-terminal"></i>
@@ -39,7 +39,7 @@ Output (snippet):
 ...
 ```
 
-회로 차단 규칙은 user profile 서비스 v3에만 적용됩니다. 위의 커넥션 풀(connectionPool) 설정은 각 인스턴스에 대한 최대 요청 수를 1로 제한합니다(이렇게 하면 테스트 상황에서 문제가 생긴 회로를 더 빨리 건너뛸 수 있습니다). 이상값 감지(outlierDetection) 설정은 임계값을 정의합니다. 50x 오류로 한 번 실패한 인스턴스는 10분 동안 메시에서 제거됩니다. Istio [문서][1]에서 다양한 설정에 대해 읽을 수 있습니다.
+회로 차단 규칙은 user profile 서비스 v3에만 적용됩니다. 위의 커넥션 풀(connectionPool) 설정은 각 인스턴스에 대한 최대 요청 수를 1로 제한합니다(이렇게 하면 테스트 상황에서 회로 차단을 더 빨리 작동시킬 수 있습니다). 이상값 감지(outlierDetection) 설정은 임계값을 정의합니다. 50x 오류로 한 번 실패한 인스턴스는 10분 동안 메시에서 제거됩니다. Istio [문서][1]에서 다양한 설정에 대해 읽을 수 있습니다.
 
 <blockquote>
 <i class="fa fa-terminal"></i>
@@ -120,11 +120,11 @@ oc apply -f ./config/istio/virtual-services-default.yaml
 
 ## Summary
 
-축하합니다. Istio에서 회로 차단을 구성했습니다!
+축하합니다. Istio에서 회로 차단 기능을 구성했습니다!
 
 몇 가지 주요 사항은 다음과 같습니다.
 
 * 회로 차단은 비정상 서비스 인스턴스에 대한 연결을 차단하여 서비스 메시에서 탄력성을 구현할 수 있습니다.
-* 회로 트립에 대한 임계값 제한은 Destination Rule에서 설정할 수 있습니다.
+* 회로 차단 작동에 대한 임계값 제한은 Destination Rule에서 설정할 수 있습니다.
 
 [1]: https://istio.io/docs/reference/config/networking/destination-rule/#OutlierDetection
