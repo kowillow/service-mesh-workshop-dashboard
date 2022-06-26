@@ -70,6 +70,7 @@ Grafana에서 'Istio Mesh Dashboard'를 선택합니다.
 <blockquote>
 <i class="fa fa-terminal"></i>
 터미널에서 다른 탭을 열고 사용자 프로필 서비스에 부하를 보냅니다.
+(워크샵 화면의 오른쪽 위, 햄버거 버튼에서 'Open Terminal'을 통해 터미널을 새로운 브라우저 탭에서 열 수 있습니다.)
 </blockquote>
 
 ```execute-2
@@ -91,14 +92,14 @@ userprofile 서비스에는 userprofile(버전 1)과 userprofile-2라는 두 가
 서비스 열(column)에서 userprofile 서비스 FQDN 위로 마우스를 가져간 다음 선택합니다.
 </blockquote>
 
-그러면 서비스 보기로 이동합니다. 아래와 같은 화면을 확인할 수 있습니다.
+그러면 서비스 보기로 이동합니다. General 바를 클릭하면 아래와 같은 화면을 확인할 수 있습니다.
 
 <img src="images/grafana-istio-service.png" width="1024"><br/>
 *Grafana Istio 서비스 대시보드*
 
 <br>
 
-이는 사용자 프로필 서비스와 관련된 메트릭입니다. '서비스 워크로드' 아래로 스크롤하면 해당 서비스에 대해 다양한 워크로드 버전이 어떻게 다른지 분석할 수 있습니다.
+이는 사용자 프로필 서비스와 관련된 메트릭입니다. '서비스 워크로드'를 선택하면 해당 서비스에 대해 다양한 워크로드 버전이 어떻게 다른지 분석할 수 있습니다.
 
 <blockquote>
 <i class="fa fa-desktop"></i>
@@ -111,9 +112,7 @@ userprofile 서비스에는 userprofile(버전 1)과 userprofile-2라는 두 가
 *Grafana Istio Service Dashboard - Request Duration*
 
 <br>
-
 이것은 메시 대시보드에서 봤던 대기 시간을 시각적으로 보여주며, 버전 2의 대기 시간이 훨씬 더 높다는 것을 확인할 수 있습니다.
-
 <br>
 
 
