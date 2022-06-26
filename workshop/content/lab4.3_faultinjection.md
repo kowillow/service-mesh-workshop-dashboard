@@ -191,7 +191,7 @@ oc apply -f ./config/istio/virtual-service-userprofile-v3.yaml
 * 지연 오류 및 중단 오류를 사용하여 서비스 메시의 탄력성을 테스트할 수 있습니다.
 * 중단 오류는 서비스 호출에 대한 응답으로 50x 오류를 종합적으로 주입합니다.
 * 지연 오류는 서비스 호출에 대한 응답에서 종합적으로 지연을 추가합니다.
-* Jaeger는 분산 추적으로 성능 지연을 할 수 있습니다.
+* Jaeger는 분산 추적으로 성능 지연을 확인할 수 있습니다.
 
 [1]: https://en.wikipedia.org/wiki/Chaos_engineering
 [2]: https://istio.io/docs/tasks/traffic-management/fault-injection/#injecting-an-http-delay-fault
