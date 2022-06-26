@@ -143,7 +143,6 @@ for ((i=1;i<=5;i++)); do curl -s -o /dev/null $GATEWAY_URL/profile; done
 
 <blockquote>
 <i class="fa fa-desktop"></i>
-Select one of the fast traces to start, and expand the lowest span.  
 빠른 트레이스(ms 단위) 중 하나를 선택하고, 가장 낮은 스팬을 확장합니다.
 </blockquote>
 
